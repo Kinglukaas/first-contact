@@ -44,7 +44,7 @@ public class MyGame : Game
 
         if (player.HitTest(mushrooms))
         {
-            player.x += gameSpeed;
+            player.y += gameSpeed;
         }
 
     }
