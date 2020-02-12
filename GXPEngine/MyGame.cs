@@ -7,6 +7,9 @@ public class MyGame : Game
 {
     Player player;
     Wall wall;
+    Mushrooms mushrooms;
+
+    private float gameSpeed = 2;
     public MyGame() : base(1920, 1080, false)
     {
         
@@ -24,12 +27,26 @@ public class MyGame : Game
             }
         }
 
+        mushrooms = new Mushrooms();
+        mushrooms.x = 120;
+        mushrooms.rotation = 90;
+        mushrooms.y = 100;
+        AddChild(mushrooms);
+
+
         player = new Player();
         AddChild(player);
     }
 
     void Update()
     {
+        mushrooms.y += gameSpeed;
+
+        if (player.HitTest(mushrooms))
+        {
+            player.x += gameSpeed;
+        }
+
     }
 
 

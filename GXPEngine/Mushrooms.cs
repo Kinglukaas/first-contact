@@ -7,7 +7,7 @@ namespace GXPEngine
 {
     public class Mushrooms : Sprite
     {
-        public Mushrooms(int x, int y) : base ("triangle.png")
+        public Mushrooms() : base ("triangle.png")
         {
 
         }
