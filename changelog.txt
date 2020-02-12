@@ -116,5 +116,4 @@ FEATURES:
 * All Sprite (sub)classes now have an optional argument for adding a collider or not (default = true). Now the option to not add a collider is not quite as
 hidden, and doesn't require subclassing.
 
-KingLukaas was here!
-Jano was here too, dudes!
+KingLukaas was here! but only ins his branch.
