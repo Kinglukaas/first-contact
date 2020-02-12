@@ -8,10 +8,11 @@ namespace GXPEngine
     public class Player : Sprite
     {
         private const float JUMPFORCE = 30f;
+        private const float friction = 0.98f;
+
+        private float gravity = 0.4f;
         private float velocityX = 0f;
         private float velocityY = 0f;
-        private  float gravity = 0.4f;
-        private const float friction = 0.98f;
 
         private bool isAbleToJump = true;
         private int doubleJump = 0;
@@ -38,12 +39,12 @@ namespace GXPEngine
         {
             if(Input.GetMouseButtonDown(0) & isAbleToJump == true)
             {
-                float blaX = Input.mouseX - this.x;
-                float blaY = Input.mouseY - this.y;
-                float length = Mathf.Sqrt(Mathf.Pow(blaX, 2) + Mathf.Pow(blaY, 2));
+                float jumpVectorX = Input.mouseX - this.x;
+                float jumpVectorY = Input.mouseY - this.y;
+                float length = Mathf.Sqrt(Mathf.Pow(jumpVectorX, 2) + Mathf.Pow(jumpVectorY, 2));
 
-                velocityX = blaX / length * JUMPFORCE;
-                velocityY = blaY / length * JUMPFORCE;
+                velocityX = jumpVectorX / length * JUMPFORCE;
+                velocityY = jumpVectorY / length * JUMPFORCE;
 
                 gravity = 0.4f;
                 doubleJump += 1;
