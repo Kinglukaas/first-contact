@@ -117,3 +117,4 @@ FEATURES:
 hidden, and doesn't require subclassing.
 
 KingLukaas was here!
+Jano was here too, dudes!
